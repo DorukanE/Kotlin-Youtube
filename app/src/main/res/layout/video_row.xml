@@ -85,10 +85,10 @@
         app:layout_constraintStart_toEndOf="@+id/textView_numberOf_views"
         app:layout_constraintTop_toBottomOf="@+id/textView_video_title" />
 
-    <TextView
-        android:id="@+id/textView_line"
+    <View
+        android:id="@+id/view_line"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:layout_marginTop="1dp"
         android:background="#969595"
         app:layout_constraintEnd_toEndOf="parent"
