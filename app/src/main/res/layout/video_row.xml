@@ -18,10 +18,11 @@
 
     <TextView
         android:id="@+id/textView_video_title"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_width="414dp"
+        android:layout_height="80dp"
         android:layout_marginTop="12dp"
         android:text="Video Title"
+        android:textColor="#E6E2E2"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

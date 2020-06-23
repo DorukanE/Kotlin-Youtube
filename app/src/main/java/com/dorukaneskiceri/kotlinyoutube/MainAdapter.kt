@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.video_row.view.*
 
-class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
+class MainAdapter(val homeFeed: MainActivity.HomeFeed): RecyclerView.Adapter<CustomViewHolder>(){
 
-    val videoTitles = listOf("First Comment", "Second Video", "Third Video")
+    //val videoTitles = listOf("First Comment", "Second Video", "Third Video")
 
     //number of items
     override fun getItemCount(): Int {
-        return videoTitles.size
+        return homeFeed.videos.count()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -22,7 +22,8 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.view.textView_video_title.text = videoTitles[position]
+        //holder.view.textView_video_title.text = videoTitles[position]
+        holder.view.textView_video_title.text = homeFeed.videos.get(position).name
     }
 }
 
