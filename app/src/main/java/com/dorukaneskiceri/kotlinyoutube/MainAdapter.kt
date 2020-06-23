@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
 
-class MainAdapter(val homeFeed: MainActivity.HomeFeed): RecyclerView.Adapter<CustomViewHolder>(){
+class MainAdapter(val homeFeed: HomeFeed): RecyclerView.Adapter<CustomViewHolder>(){
 
     //val videoTitles = listOf("First Comment", "Second Video", "Third Video")
 
@@ -23,7 +24,19 @@ class MainAdapter(val homeFeed: MainActivity.HomeFeed): RecyclerView.Adapter<Cus
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         //holder.view.textView_video_title.text = videoTitles[position]
-        holder.view.textView_video_title.text = homeFeed.videos.get(position).name
+        val video = homeFeed.videos.get(position)
+        holder.view.textView_video_title.text = video.name
+        holder.view.textView_channel_name.text = video.channel.name
+
+        var numOfViews = video.numberOfViews / 1000
+        holder.view.textView_numberOf_views.text = numOfViews.toString() + "K views"
+        holder.view.textView_upload_date.text = "1 year ago"
+
+        val videoThumbnail = holder.view.imageView_video_thumbnail
+        Picasso.get().load(video.imageUrl).into(videoThumbnail)
+
+        val channelThumbnail = holder.view.imageView_channel_profile
+        Picasso.get().load(video.channel.profileImageUrl).into(channelThumbnail)
     }
 }
 

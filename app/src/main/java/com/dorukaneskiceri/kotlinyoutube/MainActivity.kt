@@ -3,6 +3,7 @@ package com.dorukaneskiceri.kotlinyoutube
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.CalendarContract
 import android.provider.MediaStore
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView_main.setBackgroundColor(Color.DKGRAY)
+        recyclerView_main.setBackgroundColor(Color.rgb(32,32,32))
 
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         //recyclerView_main.adapter = MainAdapter()
@@ -53,10 +54,4 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
-
-    class HomeFeed(val videos: List<Video>)
-
-    class Video(val id: Int, val name: String, val link: String, val imageUrl: String, val numberOfViews: Int, val channel: Channel)
-
-    class Channel(val name: String, val profileImageUrl: String, val numberOfSubscribers: Int)
 }
