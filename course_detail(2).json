@@ -1,0 +1,30 @@
+[
+    {
+        "name":"Course Architecture Overview",
+        "duration":"9:52",
+        "number":1,
+        "imageUrl":"https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/3dec2af8-c1d2-4077-a7f7-9b9236b6e312_thumbnail",
+        "link":""
+    },
+    {
+        "name":"Stylizing Our UI",
+        "duration":"19:49",
+        "number":2,
+        "imageUrl":"https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/78e60cbc-97d0-4559-a232-abff1194a649_thumbnail",
+        "link":""
+    },
+    {
+        "name":"Build List with UITableViewController",
+        "duration":"22:28",
+        "number":3,
+        "imageUrl":"https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/e6ab3f9b-8015-4025-b7fe-8de5dd848d77_thumbnail",
+        "link":""
+    },
+    {
+        "name":"Dynamic List and Create Company",
+        "duration":"21:12",
+        "number":4,
+        "imageUrl":"https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/0fcd9078-1986-4979-9665-4f3eb7c300af_thumbnail",
+        "link":""
+    }
+]
