@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
                 val body = response.body?.string()
-                println(body)
 
                 val gson = GsonBuilder()
                 val homeFeed = gson.create().fromJson(body,HomeFeed::class.java)
