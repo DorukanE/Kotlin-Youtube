@@ -3,6 +3,7 @@ package com.dorukaneskiceri.kotlinyoutube
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,11 +17,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        refreshMainActivity()
+
         recyclerView_main.setBackgroundColor(Color.rgb(32,32,32))
 
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         //recyclerView_main.adapter = MainAdapter()
         fetchJSON()
+    }
+
+    private fun refreshMainActivity(){
+        swipeToRefresh.setOnRefreshListener{
+            fetchJSON()
+            swipeToRefresh.isRefreshing = false
+        }
     }
 
     private fun fetchJSON(){

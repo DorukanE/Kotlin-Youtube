@@ -24,6 +24,8 @@ class CourseDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        refreshDetailActivity()
+
         recyclerView_main.setBackgroundColor(Color.rgb(32,32,32))
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         //recyclerView_main.adapter = CourseDetailAdapter()
@@ -33,6 +35,13 @@ class CourseDetailActivity : AppCompatActivity() {
         supportActionBar?.title = title
 
         fetchJSON()
+    }
+
+    private fun refreshDetailActivity(){
+        swipeToRefresh.setOnRefreshListener {
+            fetchJSON()
+            swipeToRefresh.isRefreshing = false
+        }
     }
 
     private fun fetchJSON(){
@@ -65,7 +74,7 @@ class CourseDetailActivity : AppCompatActivity() {
         })
     }
 
-    private class CourseDetailAdapter(val courseLessons: Array<CourseLesson>): RecyclerView.Adapter<CourseLessonViewHolder>(){
+    private class CourseDetailAdapter(private val courseLessons: Array<CourseLesson>): RecyclerView.Adapter<CourseLessonViewHolder>(){
 
         override fun getItemCount(): Int {
             return courseLessons.size
