@@ -38,6 +38,8 @@ class CourseDetailActivity : AppCompatActivity() {
     }
 
     private fun refreshDetailActivity(){
+        swipeToRefresh.setProgressBackgroundColorSchemeColor(Color.rgb(0, 0, 0))
+        swipeToRefresh.setColorSchemeColors(Color.rgb(255, 255, 255))
         swipeToRefresh.setOnRefreshListener {
             fetchJSON()
             swipeToRefresh.isRefreshing = false

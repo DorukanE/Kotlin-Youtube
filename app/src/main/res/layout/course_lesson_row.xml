@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:text="Course Lesson Title"
         android:textColor="#E6E2E2"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewCourseLesson"
